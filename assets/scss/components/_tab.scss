@@ -1,0 +1,198 @@
+@use '../abstract/' as *;
+
+.tab {
+
+    @include sm-xs {
+        position: absolute;
+        right: 0;
+    }
+    &__links {
+        font-weight: $fw-bold;
+        background-color: white;
+        color: #bfcade;
+        text-transform: uppercase;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 25px 16px;
+        transition: 0.5s;
+        font-size: 0.75rem;
+
+        @include sm-xs {
+            padding: 0;
+            margin: 5px;
+        }
+        &:hover {
+            color: #ff530e;
+        }
+
+        &.active {
+            color: #ff530e;
+        }
+    }
+
+    &__content {
+        display: none;
+        padding: 40px 30px;
+        border: 3px solid #bfcade;
+        border-radius: 7px;
+        
+        &-container {
+            display: grid;
+            grid-template-areas: 
+                "a1 a2"
+                "a1 a3";
+
+                @include sm-xs {
+                    grid-template-areas: 
+                        "a1"
+                        "a2"
+                        "a3";
+                }
+        }
+    }
+
+
+    &__item{
+
+        &:hover {
+            opacity: 0.5;
+        }
+
+        @include sm-xs {
+            display: flex;
+        }
+
+        @include xs-min {
+            margin-bottom: 65px;
+            flex-direction: column;
+        }
+
+        &--text {
+            overflow: hidden;
+            margin-top: 60%;
+            padding-left: 12%;
+            color: white;
+            font-weight: $fw-bolder;
+            font-size: 1.563rem;
+            opacity: 0.5;
+
+            @include xs-min {
+                font-size: 1.25rem;
+            }
+
+            &-1 {
+                @include md-min {
+                    font-size: 2.188rem;
+                }
+            }
+        }
+
+        &--square {
+            height: 6.25rem;
+            width: 6.25rem;
+            border-radius: 15px;
+            border: 2px solid black;
+            background-clip: content-box;
+            padding: 2px;
+
+            @include sm-xs {
+                height: 4.25rem;
+                width: 4.25rem;
+                align-self: center;
+            }
+
+            
+
+            &-1 {
+                background-color: #00a652;
+
+                @include md-min {
+                height: 8.125rem;
+                width: 8.125rem;
+                }
+
+                @include sm-xs {
+                margin-bottom: 35px;
+                }
+
+                @include xs-min {
+                    margin-bottom: 0;
+                }
+            }
+
+            &-2 {
+                float: left;
+                background-color: #fe7fc2;
+                margin-bottom: 35px;
+
+                @include xs-min {
+                    margin-bottom: 0;
+                }
+            }
+
+            &-3 {
+                float: left;
+                background-color: #006dfe;
+            }
+        }
+
+        &--circle {
+            height: 3.125rem;
+            width: 3.125rem;
+            border-radius: 50%;
+            background-color: teal;
+        }
+
+        &--list {
+            font-weight: $fw-med;
+            background: #98a1b2;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            padding-inline-start: 8px;
+            margin-inline-start: 20px;
+
+            &-1 {
+                @include md-min {
+                    margin-inline-start: 0px;
+                }
+                
+            }
+        }
+
+        &--label {
+            margin-left: 7px;
+            display: block;
+            width: 10rem;
+
+            line-height: 20px;
+            letter-spacing: 1px;
+            hyphens: auto;
+
+            cursor: pointer;
+
+            @include sm-xs {
+                font-size: 0.8rem;
+            }
+
+            &-1 {
+                @include md-min {
+                    margin-left: 15px;
+                }
+            }
+        }
+
+        &--button {
+            position: absolute;
+            left: -9999em;
+            top: -9999em;
+
+            &:checked + .tab__item{
+                opacity: 0.5;
+            }
+        }
+    }
+}

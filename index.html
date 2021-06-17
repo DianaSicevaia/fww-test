@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>FWW Test</title>
+</head>
+<body>
+    
+    <section class="wrapper">
+
+        <div class="wrapper__item-1">
+            <h2 class="wrapper__item-1--name">Please select one font</h2>
+
+            <div class="tab">
+                <button class="tab__links" onclick="openTab(event, 'My fonts')">My fonts</button>
+                <button class="tab__links" onclick="openTab(event, 'Buy fonts')">Buy fonts</button>
+            </div>
+        </div>
+
+        <div class="wrapper__item-2">
+
+            <!-- First card with My Fonts -->
+            <div id="My fonts" class="tab__content">
+                <div class="tab__item--circle"></div>
+                <p>This is an empty card</p>
+            </div>
+    
+            <!-- Second card with By Fonts -->
+            <div id="Buy fonts" class="tab__content">
+                <div class="tab__content-container">
+
+                    <!-- First card component -->
+                    <input class="tab__item--button" type="radio" name="radioButton" value="1" id="button1">
+                    <div class="tab__item">
+                        <div class="tab__item--square tab__item--square-1">
+                            <p class="tab__item--text tab__item--text-1">M</p>
+                        </div>
+                        
+                        <ul class="tab__item--list tab__item--list-1">
+                            <li>
+                                <label class="tab__item--label  tab__item--label-1" for="button1">Merriweather project is led by Sorkin Type</label>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- Second card component -->
+                    <input class="tab__item--button" type="radio" name="radioButton" value="2" id="button2">
+                    <div class="tab__item">
+                        <div class="tab__item--square tab__item--square-2">
+                            <p class="tab__item--text">R</p>
+                        </div>
+
+                        <ul class="tab__item--list">
+                            <li>
+                                <label class="tab__item--label" for="button2">Roboto doesn't compromise, allowing letters</label>
+                            </li>
+                        </ul>
+                    </div>
+    
+                    <!-- Third card component -->
+                    <input class="tab__item--button" type="radio" name="radioButton" value="3" id="button3">
+                    <div class="tab__item">
+                        <div class="tab__item--square tab__item--square-3">
+                            <p class="tab__item--text">NS</p>
+                        </div>
+
+                        <ul class="tab__item--list">
+                            <li>
+                                <label class="tab__item--label" for="button3">Noto Sans covers over 30 scripts</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+@use '../abstract/' as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+h2 {
+    letter-spacing: 0.5px;
+}
+
+//grid areas
+@for $i from 1 through 3 {
+    .tab__item:nth-of-type(#{$i}) {
+        grid-area: a#{$i};
+    }
+}
+
+.wrapper {
+    margin: auto;
+    max-width: 43.75em;
+
+    line-break: normal;
+
+    @include sm-xs {
+        margin: 30px 20px;
+        max-width: 30.75em;
+    }
+
+    &__item {
+        &-1 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            @include sm-xs {
+                display: block;
+                position: relative;
+            }
+
+            &--name {
+                @include sm-xs {
+                    text-align: center;
+                }
+
+                @include xs-min {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+
+        &-2 {
+            @include sm-xs {
+                margin-top: 43px;
+            }
+            display: grid;
+            overflow: hidden;
+        }
+    }
+}
